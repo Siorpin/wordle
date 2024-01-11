@@ -1,0 +1,58 @@
+.game{
+    flex: 8;
+    padding: 5% 25% 5% 25%;
+    display: grid;
+    grid-template-columns: repeat(5, 130px);
+    grid-template-rows: repeat(5, 130px);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.cell{
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Prompt', sans-serif;
+    background-color: rgb(71, 71, 71);
+    border: 8px solid rgb(34, 33, 33);
+    text-align: center;
+    font-size: 100px;
+    vertical-align: middle;
+    line-height: 130px;
+}
+
+@media (max-width: 1600px) or (max-height: 800px) {
+    .game{
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(5, 100px);
+    }
+
+    .cell{
+        line-height: 100px;
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 1080px) or (max-height: 670px) {
+    .game{
+        grid-template-columns: repeat(5, 80px);
+        grid-template-rows: repeat(5, 80px);
+    }
+
+    .cell{
+        line-height: 80px;
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 500px) or (max-height: 500px) {
+    .game{
+        grid-template-columns: repeat(5, 65px);
+        grid-template-rows: repeat(5, 65px);
+    }
+
+    .cell{
+        line-height: 65px;
+        font-size: 35px;
+    }
+}
+

@@ -1,0 +1,12 @@
+.menu{
+    flex: 1;
+    background-color: rgb(34, 33, 33);
+    width: 100%;
+}
+
+@media (max-height: 730px){
+    .menu{
+        visibility: hidden;
+        flex: 0;
+    }
+}
