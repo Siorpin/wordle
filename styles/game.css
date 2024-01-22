@@ -21,6 +21,27 @@
     line-height: 130px;
 }
 
+@keyframes scaleAnim{
+    0%   {transform:scale(1);}
+   50%  {transform:scale(1.2);}
+   100% {transform:scale(1);}
+}
+
+.animate{
+    animation: scaleAnim 0.5s;
+}
+
+.winnerWindow{
+    position: fixed;
+    background-color: rgba(94, 89, 89, 0.7);
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    text-align: center;
+    font-size: 90px;
+    padding: 20% 0 20% 0;
+}
+
 @media (max-width: 1600px) or (max-height: 800px) {
     .game{
         grid-template-columns: repeat(5, 100px);
