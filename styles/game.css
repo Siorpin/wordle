@@ -9,9 +9,6 @@
 }
 
 .cell{
-    font-family: 'Heebo', sans-serif;
-    font-family: 'Nunito Sans', sans-serif;
-    font-family: 'Prompt', sans-serif;
     color: rgb(34, 33, 33);
     background-color: rgb(71, 71, 71);
     border: 8px solid rgb(34, 33, 33);
