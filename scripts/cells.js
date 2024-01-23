@@ -9,13 +9,14 @@ let words = ["konto", "fotka", "cytat", "pokaż", "tylko", "marek", "temat", "ko
 "pokaż","marek","kości","głowa","wyraz","sklep","tosty","cudna","cudny","nudny","brudny","agata","kubek","nożyk","łożko","drzwi","zegar","chyba","klasa","worek","sledź","kwiat",
 "obraz","kabel","ramka","ogród","kreda","sufit","lampa","ogień","balon","okrąg","żabka","ząbki","budka","żurek","kabel","nauka","karma","kefir","polak","szafa","konie","żabki",
 "kluby","komin","lilia","świat","słowa","laski","życie","atlas","komar","sosna","czapa","wanda","górka","babka","droga","miska","domek","autko","busik","linia","gośka","paski",
-"dachy","kremy","tarka","plony","jamki","ulica","czapa","irysy","lampa","Beata","lisek","pajac","płyta","Paula","ragga","gogle","łezka","wiatr","ferie","oceny","chyła","lanie",
+"dachy","kremy","tarka","plony","jamki","ulica","czapa","irysy","lampa","Beata","lisek","pajac","płyta","winda","rower","gogle","łezka","wiatr","ferie","oceny","chyła","lanie",
 "honor","babka","zegar","szafa","motyl","fotka","tubka","patyk","tarło","gosia","sklep","masło","miara","rosół","serce","wiara","konik","suseł","wieko","czeki","worek", "rybka",
-"piłka"];
+"piłka", "sitko"];
 let winningWord;
 let userWord = "";
 let attempt = 1;
 let checkable = false;
+let cellCounter = 1;
 
 startGame();
 
@@ -30,8 +31,6 @@ for(let i = 0; i<25; i++){
     grid[0].appendChild(cell);
 }
 
-let cellCounter = 1;
-
 document.addEventListener("keydown", e =>{
     if(e.key === "Enter" && checkable){
         decorateCells();
@@ -40,7 +39,7 @@ document.addEventListener("keydown", e =>{
 })
 
 document.addEventListener("keydown", event => {
-    if(event.keyCode >=65 && event.keyCode <= 122){
+    if(event.keyCode >=65 && event.keyCode <= 122 && stopIt()){
         grid[0].children[cellCounter].innerHTML = event.key.toUpperCase();
         userWord += event.key.toUpperCase();
         cellCounter++;
@@ -60,7 +59,7 @@ document.addEventListener("keydown", event => {
 })
 }
 
-function checkWord(counter, key){
+function checkWord(counter){
     if(counter%5 == 0 && counter != 0){
         if(words.includes(userWord.toLowerCase())){
             checkable = true;
@@ -109,3 +108,11 @@ function winner(){
     document.getElementById("main").appendChild(winnerWindow);
 }
 
+function stopIt(){
+    if(userWord.length%5 == 0 && userWord.length != 0){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
